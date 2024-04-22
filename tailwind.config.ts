@@ -1,13 +1,14 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
+const colors = require("tailwindcss/colors");
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -16,6 +17,18 @@ const config = {
       screens: {
         "2xl": "1400px",
       },
+    },
+    colors: {
+      amazon: "#F9A31F",
+      fusion: "#E61292",
+      neon: "#6633CC",
+      teal: "#01AEBC",
+      navy: "#242C40",
+      black: colors.black,
+      heather: "#929292",
+      cloudy: "F1F3F4",
+      white: colors.white,
+      "sea-green": "#006C78",
     },
     extend: {
       colors: {
@@ -75,6 +88,6 @@ const config = {
     },
   },
   plugins: [require("tailwindcss-animate")],
-} satisfies Config
+} satisfies Config;
 
-export default config
+export default config;
