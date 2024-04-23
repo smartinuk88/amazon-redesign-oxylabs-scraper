@@ -1,4 +1,3 @@
-import { cn } from "@/lib/utils";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 
