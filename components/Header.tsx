@@ -17,7 +17,7 @@ function Header() {
     router.push(`/search?q=${input}`);
   };
   return (
-    <header className="flex justify-between items-center px-7 py-5 space-x-5 md:ml-44">
+    <header className="flex justify-between items-center px-7 py-5 space-x-5 md:ml-44 bg-white z-20">
       <Link href={"/"}>
         <Image
           className="md:hidden"
