@@ -10,7 +10,7 @@ import Shampoo from "@/public/images/health-transparent.png";
 
 export default function Home() {
   return (
-    <main className="mx-7 md:mr-12 md:ml-52 max-w-screen mt-10">
+    <main className="mx-7 md:mr-12 md:ml-52 mt-44 mb-24 min-h-screen">
       <div className="grid w-full justify-items-center grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-5">
         <GridOption
           title="Activity trackers & smartwatches"

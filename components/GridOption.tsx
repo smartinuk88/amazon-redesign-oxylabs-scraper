@@ -14,7 +14,7 @@ function GridOption({ title, image }: Props) {
         pathname: "/search",
         query: { q: title },
       }}
-      className="relative border border-cloudy rounded-lg shadow-lg h-64 p-5 flex flex-col items-center justify-end hover:border-fusion transition-all duration-300 w-full max-w-sm"
+      className="relative border border-cloudy bg-white rounded-lg shadow-lg h-64 p-5 flex flex-col items-center justify-end hover:border-fusion transition-all duration-300 w-full max-w-sm"
     >
       {image && (
         <Image

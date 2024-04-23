@@ -27,7 +27,7 @@ const config = {
         navy: "#242C40",
         black: colors.black,
         heather: "#929292",
-        cloudy: "F1F3F4",
+        cloudy: "#F1F3F4",
         white: colors.white,
         "sea-green": "#006C78",
         border: "hsl(var(--border))",

@@ -17,7 +17,7 @@ function Header() {
     router.push(`/search?q=${input}`);
   };
   return (
-    <header className="flex justify-between items-center px-7 py-5 space-x-5 md:ml-44 bg-white z-20">
+    <header className="fixed top-0 flex justify-between items-center px-7 py-5 space-x-5 md:pl-44 bg-white z-30 w-full">
       <Link href={"/"}>
         <Image
           className="md:hidden"
@@ -30,7 +30,7 @@ function Header() {
 
       <form
         onSubmit={handleSubmit}
-        className="flex items-center bg-white rounded-full w-full flex-1 border-b-2 border-b-teal shadow-sm shadow-teal"
+        className="flex items-center bg-white rounded-full flex-1 border-b-2 border-b-teal shadow-sm shadow-teal"
       >
         <input
           type="text"
