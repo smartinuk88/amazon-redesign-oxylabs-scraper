@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Logo from "@/public/images/amazon-a-logo-transparent.png";
-import { Search } from "lucide-react";
+import { Search, ShoppingCart, User } from "lucide-react";
 import { FormEvent } from "react";
 import { useRouter } from "next/navigation";
 
@@ -34,7 +34,7 @@ function Header() {
       >
         <input
           type="text"
-          name="search"
+          name="input"
           placeholder="What do you need today?"
           className="flex-1 px-4 rounded-l-full outline-none text-amazon placeholder:text-amazon"
         />
@@ -44,9 +44,24 @@ function Header() {
         </button>
       </form>
 
-      <div className="flex flex-col justify-center">
-        <p className="text-xs">Hello,</p>
-        <p className="text-sm font-bold cursor-pointer">Sign In</p>
+      <div className="flex space-x-5">
+        <Link href={"/basket"}>
+          <div className="flex items-center cursor-pointer">
+            <ShoppingCart className="h-10 px-2 w-10 text-teal " />
+            <div className="hidden md:flex flex-col justify-center">
+              <p className="text-xs">No items</p>
+              <p className="text-sm font-bold">USD 0</p>
+            </div>
+          </div>
+        </Link>
+
+        <div className="flex items-center cursor-pointer">
+          <User className="h-10 px-2 w-10 text-teal" />
+          <div className="hidden md:flex flex-col justify-center">
+            <p className="text-xs">Hello,</p>
+            <p className="text-sm font-bold">Sign In</p>
+          </div>
+        </div>
       </div>
     </header>
   );
