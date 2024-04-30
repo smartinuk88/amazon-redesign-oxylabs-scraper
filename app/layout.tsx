@@ -20,9 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="relative">
+        <div className="relative min-h-screen">
           <Sidebar />
           <Header />
+
           {children}
 
           <Footer />

@@ -20,7 +20,7 @@ function SidebarOption({ icon: Icon, title }: Props) {
     >
       <button
         className="flex space-x-1 items-center px-5 w-full rounded-full hover:shadow-md hover:bg-gradient-to-r hover:from-sea-green hover:to-teal hover:text-white
-         transition-all duration-75 group"
+         transition-all duration-300 group"
       >
         <Icon className="h-10 px-2 w-10 text-amazon group-hover:text-white" />
         <p>{title}</p>

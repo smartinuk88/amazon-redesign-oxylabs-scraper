@@ -21,6 +21,7 @@ const config = {
     extend: {
       colors: {
         amazon: "#F9A31F",
+        "amazon-light-grad": "#fbc879",
         fusion: "#E61292",
         neon: "#6633CC",
         teal: "#01AEBC",
@@ -29,6 +30,7 @@ const config = {
         heather: "#929292",
         cloudy: "#F1F3F4",
         white: colors.white,
+        yellot: colors.yellow,
         "sea-green": "#006C78",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
