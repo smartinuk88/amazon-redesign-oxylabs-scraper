@@ -36,9 +36,9 @@ function Product() {
         pathname: "/",
         // query: { url: product.url },
       }}
-      className="grid grid-cols-4 border rounded-md h-64 w-full border-cloudy shadow-md"
+      className="flex flex-col md:grid md:grid-cols-4 border rounded-md md:h-64 w-full border-cloudy shadow-md hover:border-fusion transition-all duration-300"
     >
-      <div className="relative col-span-1 flex justify-center items-center">
+      <div className="relative md:col-span-1 flex justify-center items-center w-full h-72">
         <Image
           src={Smartwatch}
           alt="smartwatch"
@@ -46,9 +46,9 @@ function Product() {
           layout="fill"
         />
       </div>
-      <div className="col-span-2 flex flex-col items-start justify-between py-6">
-        <div className="flex flex-col space-y-3">
-          <p className="font-bold line-clamp-2">
+      <div className="md:col-span-2 flex flex-col items-start justify-between py-6 px-6 md:px-0 ">
+        <div className="flex flex-col space-y-3 mb-3 md:mb-0">
+          <p className="font-bold text-lg line-clamp-2">
             Apple Watch Series 5 GPS + Celular - 40mm Space Gray Aluminum Case
             w/ Black Sport Band
           </p>
@@ -76,13 +76,13 @@ function Product() {
               label === "Amazon's Choice"
                 ? "bg-navy text-amazon"
                 : "border border-amazon"
-            } text-center w-1/2 justify-self-end rounded-full p-2`}
+            } text-center w-1/2 md:justify-self-end rounded-full p-2`}
           >
             {label}
           </p>
         )}
       </div>
-      <div className="col-span-1 flex flex-col justify-end px-10 py-6">
+      <div className="md:col-span-1 flex flex-col justify-end px-6 md:px-10 py-6">
         <button
           className="px-4 py-2 cursor-pointer hover:opacity-80 border border-amazon shadow-sm rounded-full hover:shadow-md bg-gradient-to-r from-amazon to-yellow-500 text-white
          transition-all duration-300"

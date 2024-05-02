@@ -21,7 +21,6 @@ const config = {
     extend: {
       colors: {
         amazon: "#F9A31F",
-        "amazon-light-grad": "#fbc879",
         fusion: "#E61292",
         neon: "#6633CC",
         teal: "#01AEBC",

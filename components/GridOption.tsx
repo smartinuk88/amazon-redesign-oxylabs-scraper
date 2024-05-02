@@ -22,6 +22,7 @@ function GridOption({ title, image }: Props) {
           className="absolute top-[-50px] z-10"
           height={250}
           width={250}
+          objectFit="contain"
         />
       )}
       <h2 className="text-center text-xl font-bold">{title}</h2>
