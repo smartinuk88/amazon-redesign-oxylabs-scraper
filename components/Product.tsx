@@ -29,6 +29,7 @@ function Product() {
   const [label] = useState(
     labelOptions[Math.floor(Math.random() * labelOptions.length)]
   );
+  const [amountSold] = useState(Math.floor(Math.random() * 101));
 
   return (
     <Link
@@ -36,9 +37,14 @@ function Product() {
         pathname: "/",
         // query: { url: product.url },
       }}
-      className="flex flex-col md:grid md:grid-cols-4 border rounded-md md:h-64 w-full border-cloudy shadow-md hover:border-fusion transition-all duration-300"
+      className="relative flex flex-col md:grid md:grid-cols-4 border rounded-md md:h-64 w-full border-cloudy shadow-md hover:border-fusion transition-all duration-300"
     >
-      <div className="relative md:col-span-1 flex justify-center items-center w-full h-72">
+      <div className="triangle-up">
+        <span className="triangle-text text-xs font-semibold text-white z-10">
+          {amountSold}% sold
+        </span>
+      </div>
+      <div className="relative md:col-span-1 flex justify-center items-center w-full h-72 md:h-full">
         <Image
           src={Smartwatch}
           alt="smartwatch"
@@ -76,15 +82,15 @@ function Product() {
               label === "Amazon's Choice"
                 ? "bg-navy text-amazon"
                 : "border border-amazon"
-            } text-center w-1/2 md:justify-self-end rounded-full p-2`}
+            } hidden md:block text-center w-1/2 md:justify-self-end rounded-full p-2`}
           >
             {label}
           </p>
         )}
       </div>
-      <div className="md:col-span-1 flex flex-col justify-end px-6 md:px-10 py-6">
+      <div className="md:col-span-1 flex flex-col justify-end pl-4 pr-4 md:pl-0 lg:pl-4 py-6">
         <button
-          className="px-4 py-2 cursor-pointer hover:opacity-80 border border-amazon shadow-sm rounded-full hover:shadow-md bg-gradient-to-r from-amazon to-yellow-500 text-white
+          className="px-4 md:px-2 lg:px-4 py-2 md:text-sm lg:text-base cursor-pointer hover:opacity-80 border border-amazon shadow-sm rounded-full hover:shadow-md bg-gradient-to-r from-amazon to-yellow-500 text-white
          transition-all duration-300"
         >
           Add To Cart
