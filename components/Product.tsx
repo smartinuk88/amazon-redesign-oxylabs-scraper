@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Smartwatch from "@/public/images/smartwatch-transparent.png";
 import PrimeTick from "@/public/images/amazon-prime-transparent.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 
 // type Props = {
@@ -22,14 +22,19 @@ function Product() {
 
   const labelOptions = [null, "Trending", "Amazon's Choice", "Best Seller"];
 
-  const [rating] = useState(
-    Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
-  );
-  const [hasPrime] = useState(Math.random() < 0.5);
-  const [label] = useState(
-    labelOptions[Math.floor(Math.random() * labelOptions.length)]
-  );
-  const [amountSold] = useState(Math.floor(Math.random() * 101));
+  const [rating, setRating] = useState(0);
+  const [hasPrime, setHasPrime] = useState(false);
+  const [label, setLabel] = useState<string | null>(null);
+  const [amountSold, setAmountSold] = useState(0);
+
+  useEffect(() => {
+    setRating(
+      Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
+    );
+    setHasPrime(Math.random() < 0.5);
+    setLabel(labelOptions[Math.floor(Math.random() * labelOptions.length)]);
+    setAmountSold(Math.floor(Math.random() * 101));
+  }, []);
 
   return (
     <Link
@@ -48,8 +53,8 @@ function Product() {
         <Image
           src={Smartwatch}
           alt="smartwatch"
-          objectFit="contain"
-          layout="fill"
+          fill
+          className="object-contain"
         />
       </div>
       <div className="md:col-span-2 flex flex-col items-start justify-between py-6 px-6 md:px-0 ">
