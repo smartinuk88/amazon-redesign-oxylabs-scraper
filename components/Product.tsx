@@ -30,8 +30,8 @@ function Product({ product }: { product: OrganicProduct }) {
   return (
     <Link
       href={{
-        pathname: "/",
-        query: { url: product.url },
+        pathname: "/product",
+        query: { asin: product.asin },
       }}
       className="relative flex flex-col md:grid md:grid-cols-4 border rounded-md w-full min-h-64 border-cloudy shadow-md hover:border-fusion transition-all duration-300"
     >
