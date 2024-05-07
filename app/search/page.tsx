@@ -16,7 +16,7 @@ async function SearchPage({ searchParams: { q } }: Props) {
       <h2 className="mb-5 text-gray-400">
         ({results?.content.total_results_count} results)
       </h2>
-      <ul className="flex flex-col space-y-5">
+      <ul className="flex flex-col space-y-8">
         {results?.content.results.organic.map((product) => (
           <li>
             <Product key={product.asin} product={product} />

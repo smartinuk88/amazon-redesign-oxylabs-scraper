@@ -2,30 +2,29 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import Smartwatch from "@/public/images/smartwatch-transparent.png";
 import PrimeTick from "@/public/images/amazon-prime-transparent.png";
 import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import { OrganicProduct } from "@/typings/searchTypings";
 
 function Product({ product }: { product: OrganicProduct }) {
-  const MAX_RATING = 5;
-  const MIN_RATING = 1;
-
   const labelOptions = [null, "Trending", "Amazon's Choice", "Best Seller"];
 
-  const [rating, setRating] = useState(0);
   const [hasPrime, setHasPrime] = useState(false);
   const [label, setLabel] = useState<string | null>(null);
   const [amountSold, setAmountSold] = useState(0);
 
   useEffect(() => {
-    setRating(
-      Math.floor(Math.random() * (MAX_RATING - MIN_RATING + 1)) + MIN_RATING
-    );
     setHasPrime(Math.random() < 0.5);
-    setLabel(labelOptions[Math.floor(Math.random() * labelOptions.length)]);
     setAmountSold(Math.floor(Math.random() * 101));
+
+    if (product.best_seller) {
+      setLabel("Best Seller");
+    } else if (product.is_amazons_choice) {
+      setLabel("Amazon's Choice");
+    } else if (product.is_sponsored) {
+      setLabel("Sponsored");
+    }
   }, []);
 
   return (
@@ -53,12 +52,13 @@ function Product({ product }: { product: OrganicProduct }) {
       <div className="md:col-span-2 flex flex-col items-start justify-between py-6 px-6 md:px-0 ">
         <div className="flex flex-col space-y-3 mb-3 md:mb-0">
           <p className="font-bold text-lg line-clamp-2">{product.title}</p>
-          <div className="flex items-center">
-            {Array(rating)
+          <div className="flex items-center space-x-3">
+            {Array(Math.round(product.rating))
               .fill(0)
               .map((_, i) => (
                 <Star key={i} className="h-5 text-amazon" />
               ))}
+            <span className="text-xs">({product.reviews_count})</span>
           </div>
           <div className="flex space-x-5 items-center">
             <p className="font-bold">

@@ -7,7 +7,6 @@ import Bracelet from "@/public/images/bracelet-transparent.png";
 import IPhone from "@/public/images/iphone-transparent.png";
 import TShirt from "@/public/images/t-shirt-transparent.png";
 import Shampoo from "@/public/images/health-transparent.png";
-import Product from "@/components/Product";
 
 export default function Home() {
   return (
