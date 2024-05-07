@@ -6,17 +6,9 @@ import Smartwatch from "@/public/images/smartwatch-transparent.png";
 import PrimeTick from "@/public/images/amazon-prime-transparent.png";
 import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
+import { OrganicProduct } from "@/typings/searchTypings";
 
-// type Props = {
-//   product?: {
-//     url?: string;
-//     title?: string;
-//     image?: string;
-//     price?: number;
-//   };
-// };
-
-function Product() {
+function Product({ product }: { product: OrganicProduct }) {
   const MAX_RATING = 5;
   const MIN_RATING = 1;
 
@@ -40,29 +32,27 @@ function Product() {
     <Link
       href={{
         pathname: "/",
-        // query: { url: product.url },
+        query: { url: product.url },
       }}
-      className="relative flex flex-col md:grid md:grid-cols-4 border rounded-md md:h-64 w-full border-cloudy shadow-md hover:border-fusion transition-all duration-300"
+      className="relative flex flex-col md:grid md:grid-cols-4 border rounded-md w-full min-h-64 border-cloudy shadow-md hover:border-fusion transition-all duration-300"
     >
       <div className="triangle-up">
         <span className="triangle-text text-xs font-semibold text-white z-10">
           {amountSold}% sold
         </span>
       </div>
-      <div className="relative md:col-span-1 flex justify-center items-center w-full h-72 md:h-full">
+      <div className="relative md:col-span-1 flex justify-center items-center w-full md:h-full p-2">
         <Image
-          src={Smartwatch}
-          alt="smartwatch"
-          fill
-          className="object-contain"
+          src={product.url_image}
+          alt={product.title}
+          width={200}
+          height={200}
+          className="mx-auto"
         />
       </div>
       <div className="md:col-span-2 flex flex-col items-start justify-between py-6 px-6 md:px-0 ">
         <div className="flex flex-col space-y-3 mb-3 md:mb-0">
-          <p className="font-bold text-lg line-clamp-2">
-            Apple Watch Series 5 GPS + Celular - 40mm Space Gray Aluminum Case
-            w/ Black Sport Band
-          </p>
+          <p className="font-bold text-lg line-clamp-2">{product.title}</p>
           <div className="flex items-center">
             {Array(rating)
               .fill(0)
@@ -72,8 +62,8 @@ function Product() {
           </div>
           <div className="flex space-x-5 items-center">
             <p className="font-bold">
-              <span className="text-xs">$</span>199.
-              <span className="text-xs">99</span>
+              <span className="text-xs">$</span>
+              {product.price}
             </p>
             {hasPrime && (
               <Image src={PrimeTick} alt="Amazon Prime tick icon" height={10} />

@@ -25,10 +25,6 @@ export default function Home() {
         <GridOption title="Flash Deals" image={TShirt} />
         <GridOption title="Shop health & beauty" image={Shampoo} />
       </div>
-
-      <div className="flex flex-col space-y-3">
-        <Product />
-      </div>
     </main>
   );
 }
