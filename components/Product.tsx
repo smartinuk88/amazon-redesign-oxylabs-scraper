@@ -33,23 +33,27 @@ function Product({ product }: { product: OrganicProduct }) {
         pathname: "/product",
         query: { asin: product.asin },
       }}
-      className="relative flex flex-col md:grid md:grid-cols-4 border rounded-md w-full min-h-64 border-cloudy shadow-md hover:border-fusion transition-all duration-300"
+      className="relative flex flex-col md:grid md:grid-cols-6 border rounded-md w-full min-h-64 border-cloudy shadow-md hover:border-fusion transition-all duration-300"
     >
       <div className="triangle-up">
         <span className="triangle-text text-xs font-semibold text-white z-10">
           {amountSold}% sold
         </span>
       </div>
-      <div className="relative md:col-span-1 flex justify-center items-center w-full md:h-full p-2">
-        <Image
-          src={product.url_image}
-          alt={product.title}
-          width={200}
-          height={200}
-          className="mx-auto"
-        />
+
+      <div className="md:col-span-2 my-6 mx-auto flex items-center justify-center relative h-44 w-44 max-h-[300px] max-w-[300px] md:max-h-[150px] md:max-w-[150px] lg:max-h-[300px] lg:max-w-[300px] min-w-[100px] min-h-[100px]">
+        <div className="aspect-square relative w-full h-full">
+          <Image
+            src={product.url_image}
+            alt={product.title}
+            fill
+            style={{ objectFit: "contain" }}
+            className="rounded-md"
+          />
+        </div>
       </div>
-      <div className="md:col-span-2 flex flex-col items-start justify-between py-6 px-6 md:px-0 ">
+
+      <div className="md:col-span-3 flex flex-col items-start justify-between py-6 px-6 md:px-0 ">
         <div className="flex flex-col space-y-3 mb-3 md:mb-0">
           <p className="font-bold text-lg line-clamp-2">{product.title}</p>
           <div className="flex items-center space-x-3">
@@ -85,7 +89,7 @@ function Product({ product }: { product: OrganicProduct }) {
       </div>
       <div className="md:col-span-1 flex flex-col justify-end pl-4 pr-4 md:pl-0 lg:pl-4 py-6">
         <button
-          className="px-4 md:px-2 lg:px-4 py-2 md:text-sm lg:text-base cursor-pointer hover:opacity-80 border border-amazon shadow-sm rounded-full hover:shadow-md bg-gradient-to-r from-amazon to-yellow-500 text-white
+          className="px-4 md:px-1 lg:px-2 py-2 md:text-xs lg:text-sm xl:text-base cursor-pointer hover:opacity-80 border border-amazon shadow-sm rounded-full hover:shadow-md bg-gradient-to-r from-amazon to-yellow-500 text-white
          transition-all duration-300"
         >
           Add To Cart
