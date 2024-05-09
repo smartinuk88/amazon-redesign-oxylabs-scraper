@@ -6,9 +6,13 @@ import Logo from "@/public/images/amazon-a-logo-transparent.png";
 import { Search, ShoppingCart, User } from "lucide-react";
 import { FormEvent } from "react";
 import { useRouter } from "next/navigation";
+import { useCartStore } from "@/store";
+import { getCartTotal } from "@/lib/getCartTotal";
 
 function Header() {
   const router = useRouter();
+  const cart = useCartStore((state) => state.cart);
+  const total = getCartTotal(cart);
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -49,8 +53,12 @@ function Header() {
           <div className="flex items-center cursor-pointer">
             <ShoppingCart className="h-10 px-2 w-10 text-teal " />
             <div className="hidden md:flex flex-col justify-center">
-              <p className="text-xs">No items</p>
-              <p className="text-sm font-bold">USD 0</p>
+              <p className="text-xs">
+                {cart.length > 0
+                  ? `${cart.length} item${cart.length > 1 ? "s" : ""}`
+                  : "No items"}
+              </p>
+              <p className="text-sm font-bold">{total}</p>
             </div>
           </div>
         </Link>

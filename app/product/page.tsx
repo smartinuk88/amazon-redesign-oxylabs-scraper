@@ -116,25 +116,27 @@ async function ProductPage({ searchParams: { asin } }: Props) {
 
           {product.variation && product.variation.length > 0 && (
             <div className="flex flex-wrap gap-2">
-              {product.variation.map((item) => (
-                <Link
-                  href={{ pathname: "/product", query: { asin: item.asin } }}
-                  key={item.asin}
-                  className={`flex items-center justify-center  rounded-md transition-all duration-75 p-2 cursor-pointer ${
-                    item.selected
-                      ? "border-2 border-amazon"
-                      : "border border-cloudy"
-                  }`}
-                >
-                  <Image
-                    src={item.tooltip_image}
-                    alt={`Variation for ${item.asin}`}
-                    width={50}
-                    height={50}
-                    className="rounded-sm"
-                  />
-                </Link>
-              ))}
+              {product.variation
+                .filter((v) => v.tooltip_image)
+                .map((item) => (
+                  <Link
+                    href={{ pathname: "/product", query: { asin: item.asin } }}
+                    key={item.asin}
+                    className={`flex items-center justify-center  rounded-md transition-all duration-75 p-2 cursor-pointer ${
+                      item.selected
+                        ? "border-2 border-amazon"
+                        : "border border-cloudy"
+                    }`}
+                  >
+                    <Image
+                      src={item.tooltip_image}
+                      alt={`Variation for ${item.asin}`}
+                      width={50}
+                      height={50}
+                      className="rounded-sm"
+                    />
+                  </Link>
+                ))}
             </div>
           )}
         </div>

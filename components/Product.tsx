@@ -6,6 +6,7 @@ import PrimeTick from "@/public/images/amazon-prime-transparent.png";
 import { useEffect, useState } from "react";
 import { Star } from "lucide-react";
 import { OrganicProduct } from "@/typings/searchTypings";
+import AddToCart from "./AddToCart";
 
 function Product({ product }: { product: OrganicProduct }) {
   const labelOptions = [null, "Trending", "Amazon's Choice", "Best Seller"];
