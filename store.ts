@@ -1,11 +1,13 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 import { Content } from "./typings/productTypings";
+import { OrganicProduct } from "./typings/searchTypings";
+import { BasicProduct } from "./typings/sharedBasketTypings";
 
 interface CartState {
-  cart: Content[];
-  addToCart: (product: Content) => void;
-  removeFromCart: (product: Content) => void;
+  cart: BasicProduct[];
+  addToCart: (product: BasicProduct) => void;
+  removeFromCart: (product: BasicProduct) => void;
 }
 
 export const useCartStore = create<CartState>()(

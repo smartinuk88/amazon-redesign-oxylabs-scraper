@@ -1,13 +1,15 @@
 "use client";
 
 import { useCartStore } from "@/store";
-import { Content } from "@/typings/productTypings";
 import { Button } from "./ui/button";
+import { BasicProduct } from "@/typings/sharedBasketTypings";
 
-function RemoveFromCart({ product }: { product: Content }) {
+function RemoveFromCart({ product }: { product: BasicProduct }) {
   const removeFromCart = useCartStore((state) => state.removeFromCart);
 
-  const handleRemove = () => {
+  const handleRemove = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation(); // Stop event from propagating to parent Link
+    e.preventDefault();
     console.log("Removing from cart", product.asin);
     removeFromCart(product);
   };

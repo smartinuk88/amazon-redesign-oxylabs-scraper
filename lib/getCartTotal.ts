@@ -1,8 +1,8 @@
-import { Content } from "@/typings/productTypings";
+import { BasicProduct } from "@/typings/sharedBasketTypings";
 
-export function getCartTotal(products: Content[]): string {
+export function getCartTotal(products: BasicProduct[]): string {
   const total = products.reduce(
-    (acc: number, currentProduct: Content) => acc + currentProduct.price,
+    (acc: number, currentProduct: BasicProduct) => acc + currentProduct.price,
     0
   );
 

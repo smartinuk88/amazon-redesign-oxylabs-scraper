@@ -1,11 +1,11 @@
 "use client";
 
 import { useCartStore } from "@/store";
-import { Content } from "@/typings/productTypings";
 import { Button } from "./ui/button";
 import RemoveFromCart from "./RemoveFromCart";
+import { BasicProduct } from "@/typings/sharedBasketTypings";
 
-function AddToCart({ product }: { product: Content }) {
+function AddToCart({ product }: { product: BasicProduct }) {
   const [cart, addToCart] = useCartStore((state) => [
     state.cart,
     state.addToCart,
@@ -19,7 +19,9 @@ function AddToCart({ product }: { product: Content }) {
 
   console.log("How many in cart: ", howManyInCart);
 
-  const handleAdd = () => {
+  const handleAdd = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.stopPropagation(); // Stop event from propagating to parent Link
+    e.preventDefault();
     console.log("Adding to cart", product);
     addToCart(product);
   };

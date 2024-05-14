@@ -1,8 +1,13 @@
-import { Content } from "@/typings/productTypings";
+import { BasicProduct } from "@/typings/sharedBasketTypings";
 
-export function groupByASIN(products: Content[]): Record<string, Content[]> {
+export function groupByASIN(
+  products: BasicProduct[]
+): Record<string, BasicProduct[]> {
   return products?.reduce(
-    (accumulator: Record<string, Content[]>, currentProduct: Content) => {
+    (
+      accumulator: Record<string, BasicProduct[]>,
+      currentProduct: BasicProduct
+    ) => {
       const asin = currentProduct.asin;
       if (!accumulator[asin]) {
         accumulator[asin] = [];

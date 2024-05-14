@@ -40,7 +40,7 @@ function Header() {
           type="text"
           name="input"
           placeholder="What do you need today?"
-          className="flex-1 px-4 rounded-l-full outline-none text-amazon placeholder:text-amazon"
+          className="flex-1 px-4 rounded-l-full outline-none text-teal placeholder:text-amazon"
         />
 
         <button type="submit">

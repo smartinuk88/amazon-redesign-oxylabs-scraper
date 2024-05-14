@@ -9,8 +9,6 @@ import { OrganicProduct } from "@/typings/searchTypings";
 import AddToCart from "./AddToCart";
 
 function Product({ product }: { product: OrganicProduct }) {
-  const labelOptions = [null, "Trending", "Amazon's Choice", "Best Seller"];
-
   const [hasPrime, setHasPrime] = useState(false);
   const [label, setLabel] = useState<string | null>(null);
   const [amountSold, setAmountSold] = useState(0);
@@ -28,12 +26,15 @@ function Product({ product }: { product: OrganicProduct }) {
     }
   }, []);
 
+  console.log(product);
+
   return (
     <Link
       href={{
         pathname: "/product",
         query: { asin: product.asin },
       }}
+      key={product.asin}
       className="relative flex flex-col md:grid md:grid-cols-6 border rounded-md w-full min-h-64 border-cloudy shadow-md hover:border-fusion transition-all duration-300"
     >
       <div className="triangle-up">
@@ -89,12 +90,7 @@ function Product({ product }: { product: OrganicProduct }) {
         )}
       </div>
       <div className="md:col-span-1 flex flex-col justify-end pl-4 pr-4 md:pl-0 lg:pl-4 py-6">
-        <button
-          className="px-4 md:px-1 lg:px-2 py-2 md:text-xs lg:text-sm xl:text-base cursor-pointer hover:opacity-80 border border-amazon shadow-sm rounded-full hover:shadow-md bg-gradient-to-r from-amazon to-yellow-500 text-white
-         transition-all duration-300"
-        >
-          Add To Cart
-        </button>
+        <AddToCart product={product} />
       </div>
     </Link>
   );
