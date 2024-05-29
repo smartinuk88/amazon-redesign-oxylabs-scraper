@@ -7,10 +7,12 @@ import Bracelet from "@/public/images/bracelet-transparent.png";
 import IPhone from "@/public/images/iphone-transparent.png";
 import TShirt from "@/public/images/t-shirt-transparent.png";
 import Shampoo from "@/public/images/health-transparent.png";
+import Banner from "@/components/Banner";
 
 export default function Home() {
   return (
-    <main className="flex-1 mx-7 mt-24 mb-20 min-h-screen">
+    <div>
+      <Banner />
       <div className="grid w-full justify-items-center grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-5 mb-5">
         <GridOption
           title="Activity trackers & smartwatches"
@@ -24,6 +26,6 @@ export default function Home() {
         <GridOption title="Flash Deals" image={TShirt} />
         <GridOption title="Shop health & beauty" image={Shampoo} />
       </div>
-    </main>
+    </div>
   );
 }
