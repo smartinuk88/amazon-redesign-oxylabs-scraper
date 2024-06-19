@@ -26,7 +26,7 @@ export default function RootLayout({
           <Sidebar />
           <div className="flex-1">
             <Header />
-            <main className="flex-1 flex mx-7 pt-16 pb-20 min-h-screen overflow-x-hidden">
+            <main className="mx-7 pt-16 pb-20">
               {modal}
               {children}
             </main>

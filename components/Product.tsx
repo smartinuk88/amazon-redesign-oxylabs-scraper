@@ -24,7 +24,7 @@ function Product({ product }: { product: OrganicProduct }) {
     } else if (product.is_sponsored) {
       setLabel("Sponsored");
     }
-  }, []);
+  }, [product.best_seller, product.is_amazons_choice, product.is_sponsored]);
 
   console.log(product);
 

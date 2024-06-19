@@ -13,7 +13,7 @@ import SidebarOption from "./SidebarOption";
 
 function Sidebar() {
   return (
-    <div className="sticky hidden md:block left-0 top-0 w-52 overflow-y-auto h-full bg-white z-40 mb-10">
+    <div className="sticky hidden md:block left-0 top-0 md:w-48 overflow-y-auto h-full bg-white z-40 mb-10">
       <Link href={"/"} className="fixed top-0 left-0 bg-white">
         <div className="relative -mt-[150px] -ml-[125px]">
           <Image src={Logo} alt="Amazon Logo" width={300} height={300} />

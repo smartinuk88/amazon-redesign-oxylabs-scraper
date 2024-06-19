@@ -18,7 +18,7 @@ async function SearchPage({ searchParams: { q } }: Props) {
       </h2>
       <ul className="flex flex-col space-y-8">
         {results?.content.results.organic.map((product) => (
-          <li>
+          <li key={product.asin}>
             <Product key={product.asin} product={product} />
           </li>
         ))}

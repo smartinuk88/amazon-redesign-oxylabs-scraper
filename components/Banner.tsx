@@ -6,13 +6,7 @@ import Link from "next/link";
 
 function Banner() {
   return (
-    <Link
-      href={{
-        pathname: "/search",
-        query: { q: "Amazon Fire TV" },
-      }}
-      className="mb-32 p-8 lg:p-4 lg:pl-0 rounded-md lg:h-96 bg-gradient-to-br from-red-600 to-fusion flex flex-col lg:flex-row shadow-md"
-    >
+    <div className="mb-32 p-8 lg:p-4 lg:pl-0 rounded-md lg:h-96 bg-gradient-to-br from-red-600 to-fusion flex flex-col lg:flex-row shadow-md">
       <div className="w-full relative flex justify-center items-center">
         <Image
           src={AmazonFire}
@@ -33,11 +27,18 @@ function Banner() {
           />
         </div>
         <p className="text-black">Magically simple!</p>
-        <Button className="shadow-sm rounded-md hover:shadow-md bg-gradient-to-r from-amazon to-yellow-500 w-1/3 py-8 lg:absolute bottom-[-3rem]">
-          Shop now
-        </Button>
+        <Link
+          href={{
+            pathname: "/search",
+            query: { q: "Amazon Fire TV" },
+          }}
+        >
+          <Button className="shadow-sm rounded-md hover:shadow-md bg-gradient-to-r from-amazon to-yellow-500 w-1/3 py-8 lg:absolute bottom-[-3rem]">
+            Shop now
+          </Button>
+        </Link>
       </div>
-    </Link>
+    </div>
   );
 }
 

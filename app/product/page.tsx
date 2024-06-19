@@ -48,7 +48,7 @@ async function ProductPage({ searchParams: { asin } }: Props) {
 
   console.log(product);
   return (
-    <div className="overflow-x-hidden">
+    <div className="overflow-x-hidden w-full">
       <div className="flex flex-col lg:flex-row mb-10">
         <div className="hidden lg:flex flex-col space-y-2">
           {product.images.map((image, i) => (
@@ -142,34 +142,33 @@ async function ProductPage({ searchParams: { asin } }: Props) {
         </div>
       </div>
 
-      <div className="flex items-center space-x-4 border border-cloudy rounded-md shadow-md p-8 mb-10 w-96 overflow-hidden">
+      {/* <div className="flex items-center mx-auto space-x-4 border border-cloudy rounded-md shadow-md p-8 mb-10 overflow-hidden">
         <div className="hidden md:flex h-full items-center justify-center">
           <p className="text-center font-bold">Suggested Products</p>
         </div>
-        <div className="flex-1 overflow-x-auto">
-          <div className="flex space-x-4">
-            {product.ads.map((ad) => (
-              <Link
-                href={{ pathname: "/product", query: { asin: ad.asin } }}
-                key={ad.asin}
-                className="flex-shrink-0 flex flex-col items-center justify-center w-40 h-40 p-4 transition-all duration-75 cursor-pointer hover:border-b-2 hover:border-b-amazon"
-              >
-                <div className="flex justify-center relative w-full mb-2">
-                  <Image
-                    src={ad.images[0]}
-                    alt={ad.title}
-                    height={75}
-                    width={75}
-                  />
-                </div>
-                <p className="text-center text-sm font-medium line-clamp-2">
-                  {ad.title}
-                </p>
-              </Link>
-            ))}
-          </div>
+
+        <div className="flex space-x-4">
+          {product.ads.map((ad) => (
+            <Link
+              href={{ pathname: "/product", query: { asin: ad.asin } }}
+              key={ad.asin}
+              className="flex flex-col items-center justify-center h-40 p-4 transition-all duration-75 cursor-pointer hover:border-b-2 hover:border-b-amazon"
+            >
+              <div className="flex justify-center relative w-full mb-2">
+                <Image
+                  src={ad.images[0]}
+                  alt={ad.title}
+                  height={75}
+                  width={75}
+                />
+              </div>
+              <p className="text-center text-sm font-medium line-clamp-2">
+                {ad.title}
+              </p>
+            </Link>
+          ))}
         </div>
-      </div>
+      </div> */}
 
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">
