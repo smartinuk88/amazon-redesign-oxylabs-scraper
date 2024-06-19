@@ -21,13 +21,10 @@ function Header() {
     router.push(`/search?q=${input}`);
   };
   return (
-    <header
-      className="sticky top-0 flex justify-between items-center px-5 py-5 space-x-3 md:space-x-5
-     bg-white z-30 w-full"
-    >
+    <header className="sticky top-0 flex justify-between items-center px-4 sm:px-5 py-5 space-x-2 md:space-x-5 bg-white z-30 w-full overflow-x-hidden">
       <Link href={"/"}>
         <Image
-          className="md:hidden min-w-[50px] min-h-[50px] w-16 h-16"
+          className="md:hidden min-w-[50px] min-h-[50px] w-16 h-16 object-contain"
           src={Logo}
           alt="Amazon Logo"
         />
@@ -41,7 +38,7 @@ function Header() {
           type="text"
           name="input"
           placeholder="What do you need today?"
-          className="flex-1 px-2 md:px-4 rounded-l-full outline-none text-xs md:text-base text-teal placeholder:text-amazon"
+          className="flex-1 px-2 md:px-4 rounded-l-full outline-none text-xs sm:text-base text-teal placeholder:text-amazon"
         />
 
         <button type="submit">
