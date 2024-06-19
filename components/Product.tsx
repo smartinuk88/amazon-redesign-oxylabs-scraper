@@ -89,7 +89,7 @@ function Product({ product }: { product: OrganicProduct }) {
           </p>
         )}
       </div>
-      <div className="md:col-span-1 flex flex-col justify-end pl-4 pr-4 md:pl-0 lg:pl-4 py-6">
+      <div className="md:col-span-1 flex flex-col md:justify-end pl-4 pr-4 md:pl-0 lg:pl-4 py-6">
         <AddToCart product={product} />
       </div>
     </Link>
