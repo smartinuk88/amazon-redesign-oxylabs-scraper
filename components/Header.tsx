@@ -21,14 +21,15 @@ function Header() {
     router.push(`/search?q=${input}`);
   };
   return (
-    <header className="sticky top-0 flex justify-between items-center px-7 py-5 space-x-5 bg-white z-30 w-full">
+    <header
+      className="sticky top-0 flex justify-between items-center px-5 py-5 space-x-3 md:space-x-5
+     bg-white z-30 w-full"
+    >
       <Link href={"/"}>
         <Image
-          className="md:hidden"
+          className="md:hidden min-w-[50px] min-h-[50px] w-16 h-16"
           src={Logo}
           alt="Amazon Logo"
-          width={75}
-          height={75}
         />
       </Link>
 
@@ -40,7 +41,7 @@ function Header() {
           type="text"
           name="input"
           placeholder="What do you need today?"
-          className="flex-1 px-4 rounded-l-full outline-none text-teal placeholder:text-amazon"
+          className="flex-1 px-2 md:px-4 rounded-l-full outline-none text-xs md:text-base text-teal placeholder:text-amazon"
         />
 
         <button type="submit">
@@ -48,7 +49,7 @@ function Header() {
         </button>
       </form>
 
-      <div className="flex space-x-5">
+      <div className="flex space-x-2 md:space-x-5">
         <Link href={"/basket"}>
           <div className="flex items-center cursor-pointer">
             <ShoppingCart className="h-10 px-2 w-10 text-teal " />
@@ -63,13 +64,13 @@ function Header() {
           </div>
         </Link>
 
-        <div className="flex items-center cursor-pointer">
+        {/* <div className="flex items-center cursor-pointer">
           <User className="h-10 px-2 w-10 text-teal" />
           <div className="hidden md:flex flex-col justify-center">
             <p className="text-xs">Hello,</p>
             <p className="text-sm font-bold">Sign In</p>
           </div>
-        </div>
+        </div> */}
       </div>
     </header>
   );

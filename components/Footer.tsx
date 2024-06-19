@@ -5,45 +5,13 @@ import Logo from "@/public/images/amazon-logo-transparent.png";
 function Footer() {
   return (
     <footer className="bg-teal w-full z-40 px-7 py-10 text-white">
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-8 items-start">
+      <div className="gap-x-4 gap-y-8 items-start">
         <Link
           href={"/"}
-          className="col-span-2 md:col-span-1 flex justify-center md:justify-start"
+          className="col-span-2 md:col-span-1 flex justify-center"
         >
           <Image src={Logo} alt="Amazon Logo" height={75} />
         </Link>
-
-        <nav>
-          <p className="font-bold mb-2">Get to Know Us</p>
-          <ul className="text-sm">
-            <li>Careers</li>
-            <li>Blog</li>
-            <li>About Amazon</li>
-            <li>Investor Relations</li>
-            <li>Amazon Devices</li>
-            <li>Amazon Science</li>
-          </ul>
-        </nav>
-        <nav>
-          <p className="font-bold mb-2">Amazon Payment Products</p>
-          <ul className="text-sm">
-            <li>Amazon Business Card</li>
-            <li>Shop with Points</li>
-            <li>Reload Your Balance</li>
-            <li>Amazon Currency Converter</li>
-          </ul>
-        </nav>
-        <nav>
-          <p className="font-bold mb-2">Let Us Help You</p>
-          <ul className="text-sm">
-            <li>Amazon and COVID-19</li>
-            <li>Your Account</li>
-            <li>Your Orders</li>
-            <li>Shipping Rates & Policies</li>
-            <li>Returns & Replacements</li>
-            <li>Manage Your Content and Devices</li>
-          </ul>
-        </nav>
       </div>
       <hr className="mt-10" />
       <div className="text-center mt-10">

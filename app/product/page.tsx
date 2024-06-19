@@ -91,7 +91,7 @@ async function ProductPage({ searchParams: { asin } }: Props) {
         </Carousel>
 
         <div className="flex-1 p-5 space-y-5">
-          <h1 className="text-3xl font-bold">{product.title}</h1>
+          <h1 className="text-xl md:text-3xl font-bold">{product.title}</h1>
 
           <div className="flex items-center space-x-4">
             {product.rating && (
@@ -142,33 +142,35 @@ async function ProductPage({ searchParams: { asin } }: Props) {
         </div>
       </div>
 
-      {/* <div className="flex items-center mx-auto space-x-4 border border-cloudy rounded-md shadow-md p-8 mb-10 overflow-hidden">
+      <div className="flex items-center mx-auto space-x-4 border border-cloudy rounded-md shadow-md p-8 mb-10 overflow-hidden">
         <div className="hidden md:flex h-full items-center justify-center">
           <p className="text-center font-bold">Suggested Products</p>
         </div>
 
-        <div className="flex space-x-4">
-          {product.ads.map((ad) => (
-            <Link
-              href={{ pathname: "/product", query: { asin: ad.asin } }}
-              key={ad.asin}
-              className="flex flex-col items-center justify-center h-40 p-4 transition-all duration-75 cursor-pointer hover:border-b-2 hover:border-b-amazon"
-            >
-              <div className="flex justify-center relative w-full mb-2">
-                <Image
-                  src={ad.images[0]}
-                  alt={ad.title}
-                  height={75}
-                  width={75}
-                />
-              </div>
-              <p className="text-center text-sm font-medium line-clamp-2">
-                {ad.title}
-              </p>
-            </Link>
-          ))}
+        <div className="overflow-x-auto w-full">
+          <div className="flex space-x-2 md:space-x-4">
+            {product.ads.map((ad) => (
+              <Link
+                href={{ pathname: "/product", query: { asin: ad.asin } }}
+                key={ad.asin}
+                className="flex flex-col items-center justify-center h-20 md:h-40 p-4 transition-all duration-75 cursor-pointer hover:border-b-2 hover:border-b-amazon"
+              >
+                <div className="flex justify-center relative w-full mb-2">
+                  <Image
+                    src={ad.images[0]}
+                    alt={ad.title}
+                    height={75}
+                    width={75}
+                  />
+                </div>
+                <p className="text-center text-sm font-medium line-clamp-2">
+                  {ad.title}
+                </p>
+              </Link>
+            ))}
+          </div>
         </div>
-      </div> */}
+      </div>
 
       <Accordion type="single" collapsible>
         <AccordionItem value="item-1">

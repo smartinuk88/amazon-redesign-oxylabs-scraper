@@ -22,11 +22,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex relative min-h-screen">
+        <div className="md:flex min-h-screen">
           <Sidebar />
-          <div className="flex-1">
+          <div className="w-full flex-1">
             <Header />
-            <main className="mx-7 pt-16 pb-20">
+            <main className="px-7 mx-auto pt-7 pb-20 max-w-7xl">
               {modal}
               {children}
             </main>

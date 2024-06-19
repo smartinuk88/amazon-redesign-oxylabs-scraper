@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <div>
       <Banner />
-      <div className="grid w-full justify-items-center grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-5 mb-5">
+      <div className="grid w-full justify-items-center grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-y-16 gap-x-5 mb-5">
         <GridOption
           title="Activity trackers & smartwatches"
           image={Smartwatch}
