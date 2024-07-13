@@ -21,7 +21,7 @@ function Header() {
     router.push(`/search?q=${input}`);
   };
   return (
-    <header className="sticky top-0 flex justify-between items-center px-4 sm:px-5 py-5 space-x-2 md:space-x-5 bg-white z-30 w-full overflow-x-hidden">
+    <header className="sticky top-0 flex justify-between items-center px-6 py-5 space-x-2 md:space-x-5 bg-white z-30 overflow-x-hidden">
       <Link href={"/"}>
         <Image
           className="md:hidden min-w-[50px] min-h-[50px] w-16 h-16 object-contain"
@@ -48,8 +48,13 @@ function Header() {
 
       <div className="flex space-x-2 md:space-x-5">
         <Link href={"/basket"}>
-          <div className="flex items-center cursor-pointer">
+          <div className="relative flex items-center cursor-pointer">
             <ShoppingCart className="h-10 px-2 w-10 text-teal " />
+            {cart.length > 0 && (
+              <div className="flex top-0 right-0 transform -translate-x-1/2 -translate-y-1/2 bg-red-500 text-white rounded-full h-5 w-5 md:hidden items-center justify-center text-xs">
+                {cart.length}
+              </div>
+            )}
             <div className="hidden md:flex flex-col justify-center">
               <p className="text-xs">
                 {cart.length > 0

@@ -28,7 +28,7 @@ function Basket() {
           return (
             <li
               key={asin}
-              className="p-5 my-2 flex border border-cloudy rounded-md shadow-md md:flex-row items-center justify-between"
+              className="p-2 md:p-5 my-2 flex border border-cloudy rounded-md shadow-md md:flex-row items-center justify-between"
             >
               {isContent(item) ? (
                 <Image
