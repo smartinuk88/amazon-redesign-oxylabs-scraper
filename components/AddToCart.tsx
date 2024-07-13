@@ -28,7 +28,7 @@ function AddToCart({ product }: { product: BasicProduct }) {
 
   if (howManyInCart > 0) {
     return (
-      <div className="flex space-x-3 md:space-x-5 items-center">
+      <div className="flex space-x-1 md:space-x-5 items-center">
         <RemoveFromCart product={product} />
         <span>{howManyInCart}</span>
         <Button
